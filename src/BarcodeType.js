@@ -1,100 +1,101 @@
-| auspost | AusPost 4 State Customer Code |
-| azteccode | Aztec Code |
-| azteccodecompact | Compact Aztec Code |
-| aztecrune | Aztec Runes |
-| bc412 | BC412 |
-| channelcode | Channel Code |
-| codablockf | Codablock F |
-| code11 | Code 11 |
-| code128 | Code 128 |
-| code16k | Code 16K |
-| code2of5 | Code 25 |
-| code32 | Italian Pharmacode |
-| code39 | Code 39 |
-| code39ext | Code 39 Extended |
-| code49 | Code 49 |
-| code93 | Code 93 |
-| code93ext | Code 93 Extended |
-| codeone | Code One |
-| coop2of5 | COOP 2 of 5 |
-| daft | Custom 4 state symbology |
-| databarexpanded | GS1 DataBar Expanded |
-| databarexpandedcomposite | GS1 DataBar Expanded Composite |
-| databarexpandedstacked | GS1 DataBar Expanded Stacked |
-| databarexpandedstackedcomposite | GS1 DataBar Expanded Stacked Composite |
-| databarlimited | GS1 DataBar Limited |
-| databarlimitedcomposite | GS1 DataBar Limited Composite |
-| databaromni | GS1 DataBar Omnidirectional |
-| databaromnicomposite | GS1 DataBar Omnidirectional Composite |
-| databarstacked | GS1 DataBar Stacked |
-| databarstackedcomposite | GS1 DataBar Stacked Composite |
-| databarstackedomni | GS1 DataBar Stacked Omnidirectional |
-| databarstackedomnicomposite | GS1 DataBar Stacked Omnidirectional Composite |
-| databartruncated | GS1 DataBar Truncated |
-| databartruncatedcomposite | GS1 DataBar Truncated Composite |
-| datalogic2of5 | Datalogic 2 of 5 |
-| datamatrix | Data Matrix |
-| datamatrixrectangular | Data Matrix Rectangular |
-| ean13 | EAN-13 |
-| ean13composite | EAN-13 Composite |
-| ean14 | GS1-14 |
-| ean2 | EAN-2 (2 digit addon) |
-| ean5 | EAN-5 (5 digit addon) |
-| ean8 | EAN-8 |
-| ean8composite | EAN-8 Composite |
-| flattermarken | Flattermarken |
-| gs1-128 | GS1-128 |
-| gs1-128composite | GS1-128 Composite |
-| gs1-cc | GS1 Composite 2D Component |
-| gs1datamatrix | GS1 Data Matrix |
-| gs1datamatrixrectangular | GS1 Data Matrix Rectangular |
-| gs1northamericancoupon | GS1 North American Coupon |
-| gs1qrcode | GS1 QR Code |
-| hanxin | Han Xin Code |
-| hibcazteccode | HIBC Aztec Code |
-| hibccodablockf | HIBC Codablock F |
-| hibccode128 | HIBC Code 128 |
-| hibccode39 | HIBC Code 39 |
-| hibcdatamatrix | HIBC Data Matrix |
-| hibcdatamatrixrectangular | HIBC Data Matrix Rectangular |
-| hibcmicropdf417 | HIBC MicroPDF417 |
-| hibcpdf417 | HIBC PDF417 |
-| hibcqrcode | HIBC QR Code |
-| iata2of5 | IATA 2 of 5 |
-| identcode | Deutsche Post Identcode |
-| industrial2of5 | Industrial 2 of 5 |
-| interleaved2of5 | Interleaved 2 of 5 (ITF) |
-| isbn | ISBN |
-| ismn | ISMN |
-| issn | ISSN |
-| itf14 | ITF-14 |
-| japanpost | Japan Post 4 State Customer Code |
-| kix | Royal Dutch TPG Post KIX |
-| leitcode | Deutsche Post Leitcode |
-| matrix2of5 | Matrix 2 of 5 |
-| maxicode | MaxiCode |
-| micropdf417 | MicroPDF417 |
-| microqrcode | Micro QR Code |
-| msi | MSI Modified Plessey |
-| onecode | USPS Intelligent Mail |
-| pdf417 | PDF417 |
-| pdf417compact | Compact PDF417 |
-| pharmacode | Pharmaceutical Binary Code |
-| pharmacode2 | Two-track Pharmacode |
-| planet | USPS PLANET |
-| plessey | Plessey UK |
-| posicode | PosiCode |
-| postnet | USPS POSTNET |
-| pzn | Pharmazentralnummer (PZN) |
-| qrcode | QR Code |
-| rationalizedCodabar | Codabar |
-| raw | Custom 1D symbology |
-| royalmail | Royal Mail 4 State Customer Code |
-| sscc18 | SSCC-18 |
-| symbol | Miscellaneous symbols |
-| telepen | Telepen |
-| telepennumeric | Telepen Numeric |
-| upca | UPC-A |
-| upcacomposite | UPC-A Composite |
-| upce | UPC-E |
-| upcecomposite | UPC-E Composite |
+var types = [
+{type: "auspost", description: "AusPost 4 State Customer Code" },
+{type: "azteccode", description: "Aztec Code" },
+{type: "azteccodecompact", description: "Compact Aztec Code" },
+{type: "aztecrune", description: "Aztec Runes" },
+{type: "bc412", description: "BC412" },
+{type: "channelcode", description: "Channel Code" },
+{type: "codablockf", description: "Codablock F" },
+{type: "code11", description: "Code 11" },
+{type: "code128", description: "Code 128" },
+{type: "code16k", description: "Code 16K" },
+{type: "code2of5", description: "Code 25" },
+{type: "code32", description: "Italian Pharmacode" },
+{type: "code39", description: "Code 39" },
+{type: "code39ext", description: "Code 39 Extended" },
+{type: "code49", description: "Code 49" },
+{type: "code93", description: "Code 93" },
+{type: "code93ext", description: "Code 93 Extended" },
+{type: "codeone", description: "Code One" },
+{type: "coop2of5", description: "COOP 2 of 5" },
+{type: "daft", description: "Custom 4 state symbology" },
+{type: "databarexpanded", description: "GS1 DataBar Expanded" },
+{type: "databarexpandedcomposite", description: "GS1 DataBar Expanded Composite" },
+{type: "databarexpandedstacked", description: "GS1 DataBar Expanded Stacked" },
+{type: "databarexpandedstackedcomposite", description: "GS1 DataBar Expanded Stacked Composite" },
+{type: "databarlimited", description: "GS1 DataBar Limited" },
+{type: "databarlimitedcomposite", description: "GS1 DataBar Limited Composite" },
+{type: "databaromni", description: "GS1 DataBar Omnidirectional" },
+{type: "databaromnicomposite", description: "GS1 DataBar Omnidirectional Composite" },
+{type: "databarstacked", description: "GS1 DataBar Stacked" },
+{type: "databarstackedcomposite", description: "GS1 DataBar Stacked Composite" },
+{type: "databarstackedomni", description: "GS1 DataBar Stacked Omnidirectional" },
+{type: "databarstackedomnicomposite", description: "GS1 DataBar Stacked Omnidirectional Composite" },
+{type: "databartruncated", description: "GS1 DataBar Truncated" },
+{type: "databartruncatedcomposite", description: "GS1 DataBar Truncated Composite" },
+{type: "datalogic2of5", description: "Datalogic 2 of 5" },
+{type: "datamatrix", description: "Data Matrix" },
+{type: "datamatrixrectangular", description: "Data Matrix Rectangular" },
+{type: "ean13", description: "EAN-13" },
+{type: "ean13composite", description: "EAN-13 Composite" },
+{type: "ean14", description: "GS1-14" },
+{type: "ean2", description: "EAN-2 (2 digit addon)" },
+{type: "ean5", description: "EAN-5 (5 digit addon)" },
+{type: "ean8", description: "EAN-8" },
+{type: "ean8composite", description: "EAN-8 Composite" },
+{type: "flattermarken", description: "Flattermarken" },
+{type: "gs1-128", description: "GS1-128" },
+{type: "gs1-128composite", description: "GS1-128 Composite" },
+{type: "gs1-cc", description: "GS1 Composite 2D Component" },
+{type: "gs1datamatrix", description: "GS1 Data Matrix" },
+{type: "gs1datamatrixrectangular", description: "GS1 Data Matrix Rectangular" },
+{type: "gs1northamericancoupon", description: "GS1 North American Coupon" },
+{type: "gs1qrcode", description: "GS1 QR Code" },
+{type: "hanxin", description: "Han Xin Code" },
+{type: "hibcazteccode", description: "HIBC Aztec Code" },
+{type: "hibccodablockf", description: "HIBC Codablock F" },
+{type: "hibccode128", description: "HIBC Code 128" },
+{type: "hibccode39", description: "HIBC Code 39" },
+{type: "hibcdatamatrix", description: "HIBC Data Matrix" },
+{type: "hibcdatamatrixrectangular", description: "HIBC Data Matrix Rectangular" },
+{type: "hibcmicropdf417", description: "HIBC MicroPDF417" },
+{type: "hibcpdf417", description: "HIBC PDF417" },
+{type: "hibcqrcode", description: "HIBC QR Code" },
+{type: "iata2of5", description: "IATA 2 of 5" },
+{type: "identcode", description: "Deutsche Post Identcode" },
+{type: "industrial2of5", description: "Industrial 2 of 5" },
+{type: "interleaved2of5", description: "Interleaved 2 of 5 (ITF)" },
+{type: "isbn", description: "ISBN" },
+{type: "ismn", description: "ISMN" },
+{type: "issn", description: "ISSN" },
+{type: "itf14", description: "ITF-14" },
+{type: "japanpost", description: "Japan Post 4 State Customer Code" },
+{type: "kix", description: "Royal Dutch TPG Post KIX" },
+{type: "leitcode", description: "Deutsche Post Leitcode" },
+{type: "matrix2of5", description: "Matrix 2 of 5" },
+{type: "maxicode", description: "MaxiCode" },
+{type: "micropdf417", description: "MicroPDF417" },
+{type: "microqrcode", description: "Micro QR Code" },
+{type: "msi", description: "MSI Modified Plessey" },
+{type: "onecode", description: "USPS Intelligent Mail" },
+{type: "pdf417", description: "PDF417" },
+{type: "pdf417compact", description: "Compact PDF417" },
+{type: "pharmacode", description: "Pharmaceutical Binary Code" },
+{type: "pharmacode2", description: "Two-track Pharmacode" },
+{type: "planet", description: "USPS PLANET" },
+{type: "plessey", description: "Plessey UK" },
+{type: "posicode", description: "PosiCode" },
+{type: "postnet", description: "USPS POSTNET" },
+{type: "pzn", description: "Pharmazentralnummer (PZN)" },
+{type: "qrcode", description: "QR Code" },
+{type: "rationalizedCodabar", description: "Codabar" },
+{type: "raw", description: "Custom 1D symbology" },
+{type: "royalmail", description: "Royal Mail 4 State Customer Code" },
+{type: "sscc18", description: "SSCC-18" },
+{type: "symbol", description: "Miscellaneous symbols" },
+{type: "telepen", description: "Telepen" },
+{type: "telepennumeric", description: "Telepen Numeric" },
+{type: "upca", description: "UPC-A" },
+{type: "upcacomposite", description: "UPC-A Composite" },
+{type: "upce", description: "UPC-E" },
+{type: "upcecomposite", description: "UPC-E Composite" }];
