@@ -26,7 +26,7 @@ class App extends Component {
           <Barcode type={this.state.barcodeType} data="8675309"/>
           <h1 className="App-title">Barcode Generator</h1>
         </header>
-        <p>Barcode Type: <BarcodeTypes onChange={this.barcodeTypeSelected}/></p>
+        <p>Barcode Type: <BarcodeTypes selected={this.state.barcodeType} onChange={this.barcodeTypeSelected}/></p>
       </div>
     );
   }
