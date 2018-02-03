@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Barcode from './Barcode'
 import BarcodeTypes from './BarcodeType'
+import FileUploader from './FileUploader'
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
           <h1 className="App-title">Barcode Generator</h1>
         </header>
         <p>Barcode Type: <BarcodeTypes selected={this.state.barcodeType} onChange={this.barcodeTypeSelected}/></p>
+        <FileUploader/>
       </div>
     );
   }
