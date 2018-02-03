@@ -111,7 +111,7 @@ class BarcodeTypes extends Component {
 
     render() {
         return (
-          <select className="BarcodeTypes">{barcodeOpts}</select>
+          <select onChange={this.props.onChange} className="BarcodeTypes">{barcodeOpts}</select>
         );
       }
 }
