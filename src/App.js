@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import bwipjs from 'bwip-js';
+import BarcodeTypes from './BarcodeType'
 
 class App extends Component {
   componentDidMount() {
@@ -31,6 +32,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Barcode Generator</h1>
         </header>
+        <p>Barcode Type: <BarcodeTypes/></p>
         <canvas id="mycanvas"></canvas>
       </div>
     );
