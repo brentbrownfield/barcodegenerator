@@ -10,11 +10,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <Barcode data="8675309"/>
           <h1 className="App-title">Barcode Generator</h1>
         </header>
         <p>Barcode Type: <BarcodeTypes/></p>
-        <Barcode data="8675309"/>
       </div>
     );
   }
