@@ -103,7 +103,7 @@ const barcodeTypes = [
     {type: "upcecomposite", description: "UPC-E Composite" }
 ];
 
-const barcodeOpts = barcodeTypes.map((opt) => 
+const barcodeOpts = barcodeTypes.sort((a, b) => a.description.localeCompare(b.description)).map((opt) => 
     <option key={opt.type} value={opt.type}>{opt.description}</option>
 );
 
