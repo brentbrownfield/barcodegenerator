@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import bwipjs from 'bwip-js';
 
 class Barcode extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {
             type="code128",
@@ -18,6 +14,8 @@ class Barcode extends Component {
 
         return (
             <canvas ref={(input) => {
+                if(input === null) return null;
+
                 bwipjs(input, {
                     bcid:        type,          // Barcode type
                     text:        data,          // Text to encode
@@ -32,7 +30,7 @@ class Barcode extends Component {
                             console.log(err);
                         } else {
                             // Nothing else to do in this example...
-                            console.log("Barcode success")
+                            console.log("Barcode success " + type)
                         }
                     });
             }}>
