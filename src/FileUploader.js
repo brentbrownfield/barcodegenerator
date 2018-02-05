@@ -9,8 +9,26 @@ class FileUploader extends Component {
         this.dropHandler = this.dropHandler.bind(this);
         this.dragOver = this.dragOver.bind(this);
         this.dragEnd = this.dragEnd.bind(this);
+        this.readFile = this.readFile.bind(this);
     }
     
+    readFile(f) {
+        var reader = new FileReader();
+
+		// Closure to capture the file information.
+		reader.onload = (function (theFile) {
+			return function (e) {
+				try {
+					const json = JSON.parse(e.target.result);
+					console.log('Parsed JSON = \n' + JSON.stringify(json));
+				} catch (ex) {
+					console.log('ex when trying to parse json = ' + ex);
+				}
+			}
+		})(f);
+		reader.readAsText(f);
+    }
+
     dropHandler(event) {
         console.log(event);
         event.preventDefault();
@@ -19,15 +37,17 @@ class FileUploader extends Component {
         if (dt.items) {
             // Use DataTransferItemList interface to access the file(s)
             for (var i = 0; i < dt.items.length; i++) {
-                if (dt.items[i].kind == "file") {
+                if (dt.items[i].kind === "file") {
                     var f = dt.items[i].getAsFile();
                     console.log("... file[" + i + "].name = " + f.name);
+                    this.readFile(f);
                 }
             }
         } else {
             // Use DataTransfer interface to access the file(s)
-            for (var i = 0; i < dt.files.length; i++) {
+            for (i = 0; i < dt.files.length; i++) {
                 console.log("... file[" + i + "].name = " + dt.files[i].name);
+                this.readFile(dt.files[i]);
             }
         }
     }
