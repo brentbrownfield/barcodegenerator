@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { createStore } from 'redux'
 import 'App.css';
 import Barcode from 'Barcode'
 import BarcodeTypeSelector from 'BarcodeTypeSelector'
 import FileUploader from 'FileUploader'
+import rootReducer from 'rootReducer'
+import Barcodes from 'Barcodes'
 
 class App extends Component {
 
@@ -12,6 +15,17 @@ class App extends Component {
 
     this.barcodeTypeSelected = this.barcodeTypeSelected.bind(this);
     //this.handleSubmit = this.handleSubmit.bind(this);
+    this.store = createStore(rootReducer);
+
+    console.log(this.store.getState());
+
+    const unsubscribe = this.store.subscribe(() =>
+      console.log(this.store.getState())
+    )
+
+    this.store.dispatch(Barcodes.actions.add("code128","sample1234"));
+
+    unsubscribe();
   }
 
   barcodeTypeSelected(event) {
