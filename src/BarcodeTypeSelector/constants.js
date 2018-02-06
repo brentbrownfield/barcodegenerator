@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const barcodeTypes = [
+export const NAME = 'BarcodeTypeSelector';
+
+const TYPES = [
     {type: "auspost", description: "AusPost 4 State Customer Code" },
     {type: "azteccode", description: "Aztec Code" },
     {type: "azteccodecompact", description: "Compact Aztec Code" },
@@ -103,17 +105,6 @@ const barcodeTypes = [
     {type: "upcecomposite", description: "UPC-E Composite" }
 ];
 
-const barcodeOpts = barcodeTypes.sort((a, b) => a.description.localeCompare(b.description)).map((opt) => 
+export const OPTIONS = TYPES.sort((a, b) => a.description.localeCompare(b.description)).map((opt) => 
     <option key={opt.type} value={opt.type}>{opt.description}</option>
 );
-
-class BarcodeTypes extends Component {
-
-    render() {
-        return (
-          <select value={this.props.selected} onChange={this.props.onChange} className="BarcodeTypes">{barcodeOpts}</select>
-        );
-      }
-}
-
-export default BarcodeTypes;
