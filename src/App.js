@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
-import Barcode from './Barcode'
-import BarcodeTypes from './BarcodeType'
-import FileUploader from './FileUploader'
+import 'App.css';
+import Barcode from 'Barcode'
+import BarcodeTypes from 'BarcodeType'
+import FileUploader from 'FileUploader'
 
 class App extends Component {
 
