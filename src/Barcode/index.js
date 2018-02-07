@@ -27,7 +27,11 @@ class Barcode extends Component {
                         if (err) {
                             // Decide how to handle the error
                             // `err` may be a string or Error object
-                            console.log(err);
+                            let eolIndex = err.indexOf("\n");
+                            let firstLineError = eolIndex >= 0 ? err.substring(0,eolIndex) : err;
+                            let lastColonIndex = firstLineError.lastIndexOf(":");
+                            let errorMessage = lastColonIndex >= 0 && lastColonIndex < firstLineError.length ? firstLineError.substring(lastColonIndex + 1).trim() : firstLineError;
+                            console.log(errorMessage);
                         } else {
                             // Nothing else to do in this example...
                             console.log("Barcode success " + type)
