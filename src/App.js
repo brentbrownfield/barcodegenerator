@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import 'bootstrap/css/bootstrap.css'
+import 'bootstrap/css/bootstrap-theme.css'
 import 'App.css';
 import Barcode from 'Barcode'
 import BarcodeTypeSelector from 'BarcodeTypeSelector'
 import * as barcodes from 'Barcodes'
-
+import { Grid, Row, Col } from 'react-bootstrap';
 class App extends Component {
 
   constructor(props) {
@@ -21,14 +23,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <Barcode type={this.state.barcodeType} data="8675309"/>
-          <h1 className="App-title">Barcode Generator</h1>
-        </header>
-        <BarcodeTypeSelector selected={this.state.barcodeType} onChange={this.barcodeTypeSelected}/>
-        <barcodes.Container />
-      </div>
+      <Grid className="App">
+        <Row>
+          <header className="App-header">
+            <Barcode type={this.state.barcodeType} data="8675309"/>
+            <h1 className="App-title">Barcode Generator</h1>
+          </header>
+          <BarcodeTypeSelector selected={this.state.barcodeType} onChange={this.barcodeTypeSelected}/>
+        </Row>
+        <Row>
+          <barcodes.Container />
+        </Row>
+      </Grid>
     );
   }
 }
