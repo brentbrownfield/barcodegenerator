@@ -16,7 +16,8 @@ export const Component = ({add, edit, barcodes}) => (
             <BarcodeEditor 
                 key={opt.id} 
                 barcode={opt}
-                barcodeTypeChange={(type) => edit(opt.id,type.target.value,opt.value)} />
+                barcodeTypeChange={(type) => edit(opt.id,type.target.value,opt.value)} 
+                barcodeDataChange={(type) => edit(opt.id,opt.type, type.target.value)}/>
         )}
     </div>
 );

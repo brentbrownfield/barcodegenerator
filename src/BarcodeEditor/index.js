@@ -8,6 +8,7 @@ class BarcodeEditor extends Component {
         return (
             <div>
                 <BarcodeTypeSelector selected={this.props.barcode.type} onChange={this.props.barcodeTypeChange}/>
+                <input type="text" value={this.props.barcode.data} onChange={this.props.barcodeDataChange} />
                 <Barcode type={this.props.barcode.type} data={this.props.barcode.data} />
             </div>
         );
