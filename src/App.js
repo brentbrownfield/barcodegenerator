@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { createStore } from 'redux'
 import 'App.css';
 import Barcode from 'Barcode'
 import BarcodeTypeSelector from 'BarcodeTypeSelector'

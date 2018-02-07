@@ -7,13 +7,16 @@ import * as actions from './actions'
 import BarcodeEditor from 'BarcodeEditor';
 import FileUploader from 'FileUploader'
 
-export const Component = ({add, barcodes}) => (
+export const Component = ({add, edit, barcodes}) => (
     <div>
         <FileUploader 
             display={barcodes === null || barcodes.size === 0}
             dataLoaded={(data) => data.forEach((item) => add(item.type,item.value))}/>
-        {barcodes.map((opt) => 
-            <BarcodeEditor key={opt.id} barcode={opt} />
+        {barcodes.valueSeq().map((opt) => 
+            <BarcodeEditor 
+                key={opt.id} 
+                barcode={opt}
+                barcodeTypeChange={(type) => edit(opt.id,type.target.value,opt.value)} />
         )}
     </div>
 );

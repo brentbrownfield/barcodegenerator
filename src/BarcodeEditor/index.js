@@ -7,7 +7,7 @@ class BarcodeEditor extends Component {
     render() {
         return (
             <div>
-                <BarcodeTypeSelector />
+                <BarcodeTypeSelector selected={this.props.barcode.type} onChange={this.props.barcodeTypeChange}/>
                 <Barcode type={this.props.barcode.type} data={this.props.barcode.data} />
             </div>
         );
