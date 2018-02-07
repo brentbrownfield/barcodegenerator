@@ -13,14 +13,16 @@ class FileUploader extends Component {
     }
     
     readFile(f) {
-        var reader = new FileReader();
+        let reader = new FileReader();
+        let dataLoaded = this.props.dataLoaded;
 
 		// Closure to capture the file information.
 		reader.onload = (function (theFile) {
 			return function (e) {
 				try {
 					const json = JSON.parse(e.target.result);
-					console.log('Parsed JSON = \n' + JSON.stringify(json));
+                    console.log('Parsed JSON = \n' + JSON.stringify(json));
+                    dataLoaded(json);
 				} catch (ex) {
 					console.log('ex when trying to parse json = ' + ex);
 				}
@@ -75,9 +77,9 @@ class FileUploader extends Component {
     }
 
     render() {
-
+        let displayStyle = this.props.display ? "block" : "none";
         return (
-            <div className="FileUploader" onDrop={this.dropHandler} onDragOver={this.dragOver} onDragEnd={this.dragEnd}>
+            <div className="FileUploader" style={{display: displayStyle}} onDrop={this.dropHandler} onDragOver={this.dragOver} onDragEnd={this.dragEnd}>
                 <strong>Drop barcode data file here...</strong>
             </div>
         );

@@ -3,9 +3,7 @@ import { createStore } from 'redux'
 import 'App.css';
 import Barcode from 'Barcode'
 import BarcodeTypeSelector from 'BarcodeTypeSelector'
-import FileUploader from 'FileUploader'
-import rootReducer from 'rootReducer'
-import Barcodes from 'Barcodes'
+import * as barcodes from 'Barcodes'
 
 class App extends Component {
 
@@ -14,18 +12,6 @@ class App extends Component {
     this.state = {barcodeType: 'code128'};
 
     this.barcodeTypeSelected = this.barcodeTypeSelected.bind(this);
-    //this.handleSubmit = this.handleSubmit.bind(this);
-    this.store = createStore(rootReducer);
-
-    console.log(this.store.getState());
-
-    const unsubscribe = this.store.subscribe(() =>
-      console.log(this.store.getState())
-    )
-
-    this.store.dispatch(Barcodes.actions.add("code128","sample1234"));
-
-    unsubscribe();
   }
 
   barcodeTypeSelected(event) {
@@ -42,7 +28,7 @@ class App extends Component {
           <h1 className="App-title">Barcode Generator</h1>
         </header>
         <BarcodeTypeSelector selected={this.state.barcodeType} onChange={this.barcodeTypeSelected}/>
-        <FileUploader/>
+        <barcodes.Container />
       </div>
     );
   }
