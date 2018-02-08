@@ -1,0 +1,11 @@
+.BarcodeDisplay {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: solid 1px;
+    margin-bottom: 10px;
+}
+
+.BarcodeDisplay .btn-toolbar {
+    float: left;
+}
