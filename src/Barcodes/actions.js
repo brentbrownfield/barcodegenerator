@@ -1,9 +1,9 @@
 import * as t from './actionTypes';
 import shortid from 'shortid';
 
-export const add = (type, data) => ({
+export const add = (type, data, description) => ({
     type: t.ADD,
-    payload: { id: shortid.generate(), type: type, data: data }
+    payload: { id: shortid.generate(), type: type, data: data, label: description }
 });
 
 export const remove = (id) => ({

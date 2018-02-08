@@ -13,7 +13,7 @@ export const Component = ({add, edit, remove, barcodes}) => (
     <div>
                 <FileUploader 
                     display={barcodes === null || barcodes.size === 0}
-                    dataLoaded={(data) => data.forEach((item) => add(item.type,item.value))}/>
+                    dataLoaded={(data) => data.forEach((item) => add(item.type,item.value,item.description ? item.description : item.value))}/>
 
         {barcodes.valueSeq().map((opt) => 
             <BarcodeDisplay 
