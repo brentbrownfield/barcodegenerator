@@ -32,7 +32,6 @@ class FileUploader extends Component {
     }
 
     dropHandler(event) {
-        console.log(event);
         event.preventDefault();
 
         var dt = event.dataTransfer;
@@ -55,12 +54,10 @@ class FileUploader extends Component {
     }
 
     dragOver(event) {
-        console.log(event);
         event.preventDefault();
     }
 
     dragEnd(event) {
-        console.log(event);
         event.preventDefault();
 
         // Remove all of the drag data
