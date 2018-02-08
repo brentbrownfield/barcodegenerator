@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import bwipjs from 'bwip-js';
 
-class Barcode extends Component {
+class Barcode extends PureComponent {
+
     render() {
         const {
             type="code128",
