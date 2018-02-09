@@ -7,7 +7,7 @@ class Barcode extends PureComponent {
         const {
             type="code128",
             data="UNSPECIFIED", 
-            scale = 3, 
+            scale = 1, 
             height = 10, 
             includeText = false, 
             textAlign = 'center'

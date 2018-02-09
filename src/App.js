@@ -26,7 +26,7 @@ class App extends Component {
       <Grid className="App">
         <Row>
           <header className="App-header">
-            <Barcode type={this.state.barcodeType} data="8675309"/>
+            <Barcode type={this.state.barcodeType} data="8675309" scale="3"/>
             <h1 className="App-title">Barcode Generator</h1>
           </header>
           <BarcodeTypeSelector selected={this.state.barcodeType} onChange={this.barcodeTypeSelected}/>
