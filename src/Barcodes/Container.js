@@ -4,16 +4,15 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect';
 import { getAll } from './selectors';
 import * as actions from './actions'
-import BarcodeEditor from 'BarcodeEditor';
 import BarcodeDisplay from 'BarcodeDisplay';
 import FileUploader from 'FileUploader'
-import { Grid, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types'
 
 export const Component = ({add, edit, remove, barcodes}) => (
     <div>
-                <FileUploader 
-                    display={barcodes === null || barcodes.size === 0}
-                    dataLoaded={(data) => data.forEach((item) => add(item.type,item.value,item.description ? item.description : item.value))}/>
+        <FileUploader 
+            display={barcodes === null || barcodes.size === 0}
+            dataLoaded={(data) => data.forEach((item) => add(item.type,item.value,item.description ? item.description : item.value))}/>
 
         {barcodes.valueSeq().map((opt) => 
             <BarcodeDisplay 
@@ -21,7 +20,7 @@ export const Component = ({add, edit, remove, barcodes}) => (
                 barcode={opt}
                 barcodeTypeChange={(type) => edit(opt.id,type.target.value,opt.value)} 
                 barcodeDataChange={(type) => edit(opt.id,opt.type, type.target.value)}
-                handleDelete={(e) => remove(opt.id)}
+                handleDelete={() => remove(opt.id)}
                 handleEdit={(e) => console.log("Edit: " + e)}/>
         )}
     </div>
@@ -34,3 +33,9 @@ export default connect(
 
     dispatch => bindActionCreators(actions, dispatch)
 )(Component);
+
+Component.propTypes = {
+    add: PropTypes.func.isRequired,
+    edit: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
+}
