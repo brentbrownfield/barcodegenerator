@@ -18,7 +18,7 @@ class BarcodeDisplay extends Component {
                         </Button>
                     </ButtonGroup>
                 </ButtonToolbar>
-                <Barcode type={this.props.barcode.type} data={this.props.barcode.data} />
+                <Barcode type={this.props.barcode.type} data={this.props.barcode.data} scale="2" />
                 <div className="BarcodeDisplayLabel" >{this.props.barcode.label}</div>
             </div>
         );
